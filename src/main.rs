@@ -26,16 +26,28 @@ impl Bank {
     }
 }
 
-
-fn print_account(account: Account){
+fn print_account(account: Account) {
     println!("{:#?}", account);
+}
 
+fn print_holder(holder: String) {
+    println!("{:#?}", holder);
 }
 
 fn main() {
     let bank = Bank::new();
+    // let other_bank = bank;
+
     let account = Account::new(1, String::from("me"));
-    println!("{:#?}", bank);
+    let accounts = bank.accounts;
+
+    // let list_of_accounts = vec![account];
+    // println!("{:#?}", list_of_accounts);
+
+    // println!("{:#?}", bank);
+    // println!("{:#?}", bank.accounts);
+    // print_account(account);
+    print_holder(account.holder);
     print_account(account);
-    print_account(account);
+    // println!("{:#?}", account.holder);
 }
