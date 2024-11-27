@@ -50,6 +50,7 @@ fn main() {
     // print_account(account);
     // print_holder(account.holder);
     print_account(account_ref);
+    print_account(account_ref);
     // print_account(account);
     // println!("{:#?}", account.holder);
     println!("{:#?}", account);
