@@ -26,7 +26,7 @@ impl Bank {
     }
 }
 
-fn print_account(account: Account) {
+fn print_account(account: &Account) {
     println!("{:#?}", account);
 }
 
@@ -39,6 +39,7 @@ fn main() {
     // let other_bank = bank;
 
     let account = Account::new(1, String::from("me"));
+    let account_ref = &account;
     // let accounts = bank.accounts;
 
     // let list_of_accounts = vec![account];
@@ -48,7 +49,8 @@ fn main() {
     // println!("{:#?}", bank.accounts);
     // print_account(account);
     // print_holder(account.holder);
-    print_account(account);
-    print_account(account);
+    print_account(account_ref);
+    // print_account(account);
     // println!("{:#?}", account.holder);
+    println!("{:#?}", account);
 }
