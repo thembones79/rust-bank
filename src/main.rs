@@ -24,6 +24,10 @@ impl Bank {
     fn new() -> Self {
         Bank { accounts: vec![] }
     }
+
+    fn add_account(&mut self, account: Account) {
+        self.accounts.push(account);
+    }
 }
 
 fn print_account(account: &Account) {
@@ -34,24 +38,40 @@ fn print_holder(holder: String) {
     println!("{:#?}", holder);
 }
 
+fn change_account(account: &mut Account) {
+    account.balance = 10;
+}
+
+// fn make_and_print_account() -> &Account {
+//     let account = Account::new(1, String::from("me"));
+//     println!("{:#?}", account);
+//     &account
+// }
+
 fn main() {
-    // let bank = Bank::new();
+    // let avcount_ref = make_and_print_account();
+    // println!("{}", avcount_ref.balance);
+    let mut bank = Bank::new();
     // let other_bank = bank;
 
     let account = Account::new(1, String::from("me"));
-    let account_ref = &account;
+    // let other_account = account;
+
+    bank.add_account(account);
+    // let account_ref = &account;
     // let accounts = bank.accounts;
 
     // let list_of_accounts = vec![account];
     // println!("{:#?}", list_of_accounts);
 
-    // println!("{:#?}", bank);
+    println!("{:#?}", bank);
     // println!("{:#?}", bank.accounts);
     // print_account(account);
     // print_holder(account.holder);
-    print_account(account_ref);
-    print_account(&account);
+    // print_account(account_ref);
+    // print_account(&account);
     // print_account(account);
     // println!("{:#?}", account.holder);
-    println!("{:#?}", account);
+    // change_account(&mut account);
+    // println!("{:#?}", account);
 }
